@@ -1,0 +1,11 @@
+[Force Handlers]
+It will run the handler task even though you have task failures.
+It can also set this parameter in different areas.
+* Playbook ⇒ force_handlers: true
+* ansible.cfg file ⇒ force_handlers = true
+* Command line argument ⇒ --force-handlers
+
+[Ignore Errors]
+It will ignore the failed task and will execute the handler tasks.
+It can also set the property in Playbook.
+* Playbook ⇒ ignore_errors: true
