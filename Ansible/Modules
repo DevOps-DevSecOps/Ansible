@@ -1,0 +1,245 @@
+[apache2_module]
+It enables or disables a specified module of the Apache2 webserver.
+
+[apk]
+It manages apk packages for Alpine Linux.
+
+[apt]
+It manages apt packages (such as for Debian/Ubuntu).
+
+[apt_key]
+It add or remove an apt key, optionally downloading it.
+
+[apt_repo]
+It manages APT repositories using apt-repo tool.
+
+[apt_repository]
+It add or remove an APT repositories in Ubuntu and Debian.
+
+[apt_rpm]
+It manages packages with apt-rpm. Both low-level (rpm) and high-level (apt-get) package manager binaries required.
+
+[archive]
+Packs an archive.
+Source files can be deleted after archival by specifying remove=True.
+
+[at]
+Schedule the execution of a command or script file via the at command.
+It use this module to schedule a command or script file to run once in the future.
+All jobs are executed in the ‘a’ queue.
+
+[authorized_key]
+It adds or removes SSH authorized keys for particular user accounts.
+
+[aws_region_info]
+It gather information about AWS regions.
+
+[aws_s3]
+This module allows the user to manage S3 buckets and the objects within them.
+Includes support for creating and deleting both objects and buckets, retrieving objects as files or strings and generating download links.
+This module has a dependency on boto3 and botocore.
+There are various modes of operation available with aws_s3.
+● PUT : upload
+● GET : download
+● geturl : return download URL
+● getstr : download object as string
+● list : list keys / objects
+● create : create bucket
+● delete : delete bucket
+● delobj : delete object
+● copy : copy object that is already stored in another bucket
+
+[aws_s3_bucket_info]
+It lists S3 Buckets in AWS.
+
+[aws_s3_cors]
+It manage CORS for S3 buckets in AWS.
+
+[blockinfile]
+This module will insert/update/remove a block of multi-line text surrounded by customizable marker lines.
+
+[command]
+It execute commands on targets.
+It given command will be executed on all selected nodes.
+
+[copy]
+It copies a file from the local or remote machine to a location on the remote machine.
+
+[cron]
+It manage crontab and environment variables entries.
+It allows to create environment variables and named crontab entries, update, or delete them.
+
+[cronvar]
+It manage crontab variables.
+It allows to create, update, or delete cron variable definitions.
+
+[debug]
+print statements during execution and can be useful for debugging variables.
+
+[dnf]
+It installs, upgrade, removes, and lists packages and groups with the dnf package manager.
+
+[docker_image_info]
+Inspect docker images with one or more image names.
+If an image does not exist locally, it will not appear in the results.
+
+[docker_login]
+Authenticate with a docker registry and add the credentials to your local Docker config file.
+
+[easy_install]
+It installs Python libraries, optionally in a virtualenv.
+
+[fetch]
+It works like copy, but in reverse.
+It copy files from remote locations to the local box.
+It is used for fetching files from remote machines and storing them locally in a file, organized by hostname.
+Files that already exist at dest will be overwritten if they are different than the src.
+
+[file]
+It manage the files, symlinks, directories.
+It also remove files, symlinks, directories.
+
+[filesystem]
+It creates a filesystem for Linux.
+
+[find]
+It list the no of files based on specific criteria.
+
+[get_url]
+It downloads files from HTTP, HTTPS, or FTP to the remote server.
+
+[git]
+It manage git checkouts of repositories to deploy files or software.
+
+[group]
+It manage presence of groups on a host Linux.
+
+[import_playbook]
+Includes a file with a list of plays to be executed.
+Files with a list of plays can only be included at the top level.
+
+[import_role]
+
+[import_tasks]
+Imports a list of tasks to be added to the current playbook for subsequent execution.
+
+[include]
+Includes a file with a list of plays or tasks to be executed in the current playbook.
+Files with a list of plays can only be included at the top level. Lists of tasks can only be included where tasks normally run (in play).
+
+[include_role]
+Dynamically loads and executes a specified role as a task.
+
+[include_tasks]
+Includes a file with a list of tasks to be executed in the current playbook.
+
+[include_vars]
+It loads YAML/JSON variables dynamically from a file or directory, recursively, during task runtime.
+If loading a directory, the files are sorted alphabetically before being loaded.
+
+[k8s]
+
+[k8s_info]
+It describe Kubernetes (K8s) objects.
+
+[k8s_scale]
+Use to set the number of replicas for a Deployment, ReplicaSet, or Replication Controller, or the parallelism a Job.
+
+[k8s_service]
+It manage Services on Kubernetes.
+
+[lineinfile]
+It manage lines in files, replace an existing line using a regular expression.
+
+[mail]
+It is useful for sending emails from playbooks.
+By sending out a mail can be equally useful as a way to notify one or more people in a team that a specific action has been (successfully) taken.
+
+[mount]
+It control active and configured mount points for Linux.
+
+[npm]
+It manage node.js packages with Node Package Manager (npm).
+
+[package]
+It installs, upgrade and removes packages using the underlying OS package manager.
+This module actually calls the package modules for each system (apt, yum, etc).
+
+[ping]
+It try to connect to host, verify a usable python and return "pong" on success.
+
+[pip]
+It manage Python library dependencies.
+
+[reboot]
+Reboot a machine, wait for it to go down, come back up, and respond to commands.
+
+[replace]
+This module can replace a word with another word.
+This module will need 3 parameters i.e. ‘path’, ‘regexp’ (to find the particular word) and ‘replace’ (providing another word for replacement).
+
+[s3_bucket]
+It manage S3 buckets in AWS, DigitalOcean, Ceph, Walrus and FakeS3.
+
+[s3_lifecycle]
+
+[s3_logging]
+It manage logging facility of an s3 bucket in AWS.
+
+[s3_sync]
+
+[s3_website]
+Configure an s3 bucket as a website.
+
+[service]
+It controls services on remote hosts.
+
+[shell]
+It execute shell commands on targets remote node.
+
+[sts_assume_role]
+It assume a role using AWS Security Token Service and obtain temporary credentials.
+
+[systemd]
+It controls systemd services on remote hosts.
+
+[telnet]
+It is mostly to be used for enabling ssh on devices that only have telnet enabled by default.
+
+[ufw]
+It manage firewall with UFW.
+
+[unarchive]
+It unpacks an archive.
+It will not unpack a compressed file that does not contain an archive.
+By default, it will copy the source file from the local system to the target before unpacking.
+
+[user]
+It manage user accounts.
+
+[yum]
+It installs, upgrade, downgrades, removes, and lists packages and groups with the yum package manager.
+
+[yum_repository]
+It add or remove YUM repositories in RPM-based Linux distributions.
+
+[zypper]
+It manage packages on SUSE and openSUSE using the zypper and rpm tools.
+
+[zypper_repository]
+It add or remove Zypper repositories on SUSE and openSUSE.
+
+[register]
+The 'register' module for storing values it outputs following values:
+● start - The command execution begin time.
+● end - The command execution finished time.
+● changed - Boolean indicating if the task had to make changes.
+● cmd - The actual command which ran to generate the output.
+● delta - The total time taken to run the command. 
+          The value of this property is the difference between the end and the start time outputs.
+● stdout - The output of the command.
+● stdout_lines - An array of stdout lines one per line. 
+                 When stdout is returned, Ansible always provides a list of strings, each containing one item per line from the original output.
+● stderr - The error output of the command.
+● stderr_lines - An array of stderrlines one per line. 
+                 When stderr is returned we also always provide this field which is a list of strings, one item per line from the original.
