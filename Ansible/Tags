@@ -1,0 +1,7 @@
+If have a large playbook, it becomes useful to be able to run only a specific part of it rather than running everything in the playbook.
+
+[Special Tags]
+● always
+The "always" is a unique tag that will always run a task.
+● never
+The "never" tag to disable a task then we can achieve this using tags and that task will not be executed by default unless specifically call the tag name of that task.
