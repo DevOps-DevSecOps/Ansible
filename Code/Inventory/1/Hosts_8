@@ -1,0 +1,11 @@
+[paris]
+host01.mycompany.com
+host02.mycompany.com
+
+[amsterdam]
+host03.mycompany.com
+host04.mycompany.com
+
+[europe:children]
+paris
+amsterdam
