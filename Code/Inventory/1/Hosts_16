@@ -1,0 +1,10 @@
+[webservers]
+host01.mycompany.com app_version=1.0.1
+host02.mycompany.com app_version=1.0.2
+
+[databases]
+host03.mycompany.com app_version=1.0.3
+host04.mycompany.com app_version=1.0.4
+
+[GROUPNAME_HOSTS]
+IP_ADDRESS NAME=VALUE
