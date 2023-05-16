@@ -1,0 +1,33 @@
+[webservers]
+webserver1
+webserver2
+webserver3
+
+[dbservers]
+dbserver1
+dbserver2
+dbserver3
+
+[nfsservers]
+nfsserver1
+nfsserver2
+nfsserver3
+
+[production:children]
+webservers
+dbservers
+
+
+192.168.25.16 ansible_ssh_pass=password
+
+
+webserver1 ansible_host=192.168.25.15 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+webserver2 ansible_host=192.168.25.14 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+webserver3 ansible_host=192.168.25.13 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+webserver4 ansible_host=192.168.25.12 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+webserver5 ansible_host=192.168.25.11 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+sqlserver1 ansible_host=192.168.25.16 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+sqlserver2 ansible_host=192.168.25.17 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+sqlserver3 ansible_host=192.168.25.18 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+sqlserver4 ansible_host=192.168.25.19 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
+sqlserver5 ansible_host=192.168.25.20 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
