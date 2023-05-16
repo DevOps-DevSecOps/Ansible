@@ -1,0 +1,8 @@
+[Ad-Hoc]
+● Static Inventory
+ansible localhost -m setup
+
+[Playbooks]
+● Static Inventory
+ansible-playbook FILE_NAME.yml --check --diff --limit localhost
+ansible-playbook FILE_NAME.yml --tags TAG_NAME --limit localhost
