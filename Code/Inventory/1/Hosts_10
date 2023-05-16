@@ -1,0 +1,31 @@
+[servers]
+127.21.34.2
+127.22.2.22
+
+[test]
+126.34.3.21
+
+
+[dbservers]
+db01.testing.example.com
+db02.testing.example.com
+
+[appservers]
+app01.live.example.com
+app02.live.example.com
+app03.live.example.com
+
+
+[servers]
+localhost      	ansible_connection=local
+host1.test.com 	ansible_connection=ssh    	ansible_user=user1
+host2.test.om  	ansible_connection=ssh    	ansible_user=user2
+
+
+[servers]
+localhost     	 
+host1.test.com      	 
+host2.test.om 	 
+[servers:vars]
+ansible_connection=ssh
+ansible_user=user1
