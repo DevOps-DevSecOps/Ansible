@@ -1,0 +1,14 @@
+---
+- hosts: all
+  post_tasks:
+    - name: this is a post task
+      debug:
+        msg: "this is a post task"
+  roles:
+    - foo
+  pre_tasks:
+    - name: this is a pre task
+      debug:
+        msg: "this is a pre task"
+
+# Link :- http://www.freekb.net/Article?id=16
