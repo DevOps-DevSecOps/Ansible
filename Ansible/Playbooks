@@ -1,0 +1,11 @@
+[Notify & Handlers]
+It is exactly the same as a Task, but it will run when called by another Task.
+
+[pre_tasks and post_tasks]
+It run certain tasks before or after running the main tasks, roles.
+● pre_tasks
+The pre_tasks means before execution of below tasks, roles, post_tasks. 
+In a playbook will cause those tasks to run before all other tasks, including roles.
+● post_tasks
+The post_tasks means after execution of above all pre_tasks, tasks, roles. 
+In a playbook will cause those tasks to run after all others tasks, including roles.
