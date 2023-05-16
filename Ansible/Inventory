@@ -1,0 +1,18 @@
+● Static Inventory
+The default location for inventory file will be located in "/etc/ansible/hosts" and can be changed in to different location in "/etc/ansible/ansible.cfg". 
+
+[Parameters]
+● ansible_connection
+The connection type to the host.
+The behaviours are 'local' (ansible_connection=local) and 'ssh' (ansible_connection=ssh).
+● ansible_host
+The name of the host to connect to.
+It is the DNS_NAME (ansible_host=DNS_NAME) or IP_ADDRESS (ansible_host=IP_ADDRESS) used to connect to the host or the name of the Docker container to connect to.
+● ansible_user
+The user name (ansible_user=USER_NAME) to use when connecting to the host.
+● ansible_password
+The password (ansible_password=PASSWORD) to use to authenticate to the host (never store this variable in plain text, always use a vault).
+● ansible_port
+The connection port number (ansible_port=PORT_NO), if not the default (22 for ssh).
+● ansible_ssh_private_key_file
+Private key file used by ssh (ansible_ssh_private_key_file=FILE_NAME.pem) or (ansible_ssh_private_key_file=FILE_NAME).
