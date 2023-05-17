@@ -1,0 +1,10 @@
+---
+- name: this is our first play.
+  hosts: webserver1
+  become_user: root
+  tasks: 
+    - name: 'installing'
+      apt: name="{{ item }}" state=present
+      with_items: 
+        - vsftpd
+        - tree
