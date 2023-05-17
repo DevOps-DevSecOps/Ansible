@@ -1,0 +1,10 @@
+---
+- hosts: all
+  name: with items syntax
+  tasks:
+  - debug:
+      msg: "This is item {{item}}"
+    with_items:
+      - "a"
+      - "b"
+      - "c"
