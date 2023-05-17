@@ -1,0 +1,5 @@
+---
+- hosts: automation
+  gather_facts: True
+  roles:
+    - { role: myrole, tags: tests}
