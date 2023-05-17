@@ -1,0 +1,15 @@
+---
+- name: with_items and selectattr equalto
+  hosts: 127.0.0.1
+  connection: local
+  sudo: no
+  tasks:
+  - name: MariaDB und benötigte Pakete installieren
+    apt:
+      name: "{{ item }}"
+      state: latest
+      update_cache: yes
+    with_items:
+      - mariadb-server
+      - python-mysqldb
+      - unzip
