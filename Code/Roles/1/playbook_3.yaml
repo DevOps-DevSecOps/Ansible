@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  gather_facts: no
+  roles:
+    - role: example_role
+      vars:
+        example_var: 'example_string'
