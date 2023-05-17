@@ -1,0 +1,3 @@
+webserver ansible_host=127.0.0.1 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=gaurrav
+
+sqlserver ansible_host=192.168.25.16 ansible_ssh_pass=password ansible_connection=ssh ansible_port=22 ansible_user=root
