@@ -1,0 +1,7 @@
+---
+- name: Example
+  hosts: all
+  roles:
+    - { role: wrap_role, role_name: first_role }
+    - { role: wrap_role, role_name: second_role }
+    - { role: wrap_role, role_name: third_role }
