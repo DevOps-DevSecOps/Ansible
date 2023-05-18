@@ -14,3 +14,5 @@
     - name: print IP
       debug:
        var: IP.stdout
+
+# Link :- https://ostechnix.com/use-handlers-in-ansible-playbooks/
