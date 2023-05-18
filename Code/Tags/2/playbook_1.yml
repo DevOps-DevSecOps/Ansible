@@ -1,0 +1,21 @@
+---
+- name: Example playbook using tags
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Task 1
+    debug:
+      msg: "Task 1"
+    tags: database
+  - name: Task 2
+    debug:
+      msg: "Task 2"
+    tags: web
+  - name: Task 3
+    debug:
+      msg: "Task 3"
+    tags: deploy, network
+
+# command :- [$ ansible-playbook playbook_3.yml --tags database]
+# command :- [$ ansible-playbook playbook_3.yml --skip-tags web]
+
