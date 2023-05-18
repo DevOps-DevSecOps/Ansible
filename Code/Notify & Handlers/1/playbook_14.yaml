@@ -1,0 +1,26 @@
+---
+- hosts: staging
+  name: Install
+  become: yes
+  tasks:
+  - name: Install Apache2 on  Ubuntu server
+    apt:
+      name: apache2
+      state: present
+      update_cache: yes
+  - name: Allow HTTP traffic on UFW firewall
+    ufw:
+      rule: allow
+      port: http
+      proto: tcp
+    notify:
+    - Restart apache2
+    - Reload ufw firewall
+  handlers:
+  - name: Restart apache2
+    service:
+      name:  apache2
+      state: restarted
+  - name: Reload ufw firewall
+    ufw:
+      state: enabled
