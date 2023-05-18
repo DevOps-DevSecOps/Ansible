@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: "restart apache"
+    service:
+      name: apache2
+      state: restarted
+    notify:
+    - apacherestarted
+  handlers:
+    - name: apacherestarted
+      debug:
+        msg: "The Apache service restarted successfully"
