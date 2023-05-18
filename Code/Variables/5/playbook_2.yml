@@ -1,0 +1,10 @@
+---
+- name: variables
+  hosts: 127.0.0.1
+  connection: local
+  vars:
+    my_secret: P@ssword123  
+  tasks:
+  - name: print a variable
+    debug:
+      var: my_secret
