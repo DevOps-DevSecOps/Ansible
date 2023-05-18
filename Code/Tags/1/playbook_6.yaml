@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  gather_facts: False
+  tasks:
+
+    - name: Hello tag example
+      debug:
+        msg: "Hello!"
+      tags:
+        - hello
+
+    - name: No tag example
+      debug:
+        msg: "How are you?"
+
+    - name: Goodbye tag example
+      debug:
+        msg: "Goodbye!"
+      tags:
+        - goodbye
+
+# command :- [$ ansible-playbook playbook_5.yaml --list-tags]
+# command :- [$ ansible-playbook playbook_5.yaml --tags hello]
+# command :- [$ ansible-playbook playbook_5.yaml --skip-tags goodbye]
+
+# Link :- [https://www.redhat.com/sysadmin/ansible-tags-fast-playbook-runs]
