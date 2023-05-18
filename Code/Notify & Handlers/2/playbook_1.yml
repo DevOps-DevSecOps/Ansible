@@ -1,0 +1,22 @@
+---
+- name: 
+  hosts: webserver
+  tasks:
+    - name: Restart services on remote target
+      command: echo "This task restarts services"
+      notify: "restart services"
+
+  handlers:
+    - name: Restart Apache
+      service:
+        name: httpd
+        state: restarted
+      listen: "restart services" 
+
+    - name: verify rsyslog running service
+      service:
+        name: rsyslog
+        state: restarted
+      listen: "restart services"
+
+# Link :- https://www.cherryservers.com/blog/how-to-define-and-use-handlers-in-ansible-playbooks
