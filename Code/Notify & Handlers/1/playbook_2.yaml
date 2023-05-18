@@ -1,0 +1,19 @@
+---
+- name: Install Apache on RHEL server
+  hosts: webserver
+  tasks:
+    - name: Install the latest version of Apache
+      dnf:
+        name: httpd
+        state: latest
+
+      notify:
+       - Start Apache
+
+  handlers:
+     - name: Start Apache
+       service:
+         name: httpd
+         state: started
+
+# Link :- https://www.cherryservers.com/blog/how-to-define-and-use-handlers-in-ansible-playbooks
