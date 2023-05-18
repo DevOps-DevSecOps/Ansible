@@ -22,7 +22,7 @@
         - fourth
         - never
 
-# command :- [$ ansible-playbook playbook_4.yaml] - In output the 4th task will not be execute.
+# command :- [$ ansible-playbook playbook_3.yml] - In output the 4th task will not be execute.
 # So the fourth task was not executed here. But we can execute the fourth task by using --tags fourth
-# command :- [$ ansible-playbook playbook_4.yaml --tags fourth]
+# command :- [$ ansible-playbook playbook_3.yml --tags fourth]
 # In such case the "never" tag control is overwritten by the command line argument with a higher precedence.
