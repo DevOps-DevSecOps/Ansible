@@ -11,8 +11,8 @@
       debug: msg="I am studying.."
       tags: study
 
-# command :- [$ ansible-playbook playbook_3.yml --list-tags]
-# command :- [$ ansible-playbook playbook_3.yml -t play]
-# command :- [$ ansible-playbook playbook_3.yml -t study]
-# command :- [$ ansible-playbook playbook_3.yml -t play,study]
-# command :- [$ ansible-playbook playbook_3.yml --skip-tags play]
+# command :- [$ ansible-playbook playbook_2.yml --list-tags]
+# command :- [$ ansible-playbook playbook_2.yml -t play]
+# command :- [$ ansible-playbook playbook_2.yml -t study]
+# command :- [$ ansible-playbook playbook_2.yml -t play,study]
+# command :- [$ ansible-playbook playbook_2.yml --skip-tags play]
