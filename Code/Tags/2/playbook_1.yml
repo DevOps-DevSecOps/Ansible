@@ -16,5 +16,5 @@
       msg: "Task 3"
     tags: deploy, network
 
-# command :- [$ ansible-playbook playbook_3.yml --tags database]
-# command :- [$ ansible-playbook playbook_3.yml --skip-tags web]
+# command :- [$ ansible-playbook playbook_1.yml --tags database]
+# command :- [$ ansible-playbook playbook_1.yml --skip-tags web]
