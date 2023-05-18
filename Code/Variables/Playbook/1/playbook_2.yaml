@@ -1,0 +1,6 @@
+---
+- hosts: all
+  vars:
+    myvar: helloworld
+  vars_files:
+    - /vars/my_vars.yml
