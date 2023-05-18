@@ -1,0 +1,17 @@
+---
+- hosts: ansible_client.lab.com
+  become: yes
+  tasks:
+  - debug:
+      msg: Always run this task
+    tags: always
+  - debug:
+      msg: Never run this task
+    tags: never
+  - debug:
+      msg: Unless debug or never is explicitly requested
+    tags: [never, debug]
+
+# command :- [$ ansible-playbook playbook_3.yml]
+# command :- [$ ansible-playbook playbook_3.yml --skip-tags always]
+# command :- [$ ansible-playbook playbook_3.yml --tags never]
