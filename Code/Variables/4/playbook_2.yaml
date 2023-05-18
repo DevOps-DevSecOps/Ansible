@@ -1,0 +1,13 @@
+---
+- name: Ansible register Module example
+  hosts: workers
+  become: true
+  tasks:
+    - name: starting vsftpd
+      service: name=vsftpd state=started enabled=yes
+    - name: vsftpd status
+      command: service vsftpd status
+      register: vsftpd_status
+    - name: vsftpd status output
+      debug:
+        var: vsftpd_status.stderr_lines
