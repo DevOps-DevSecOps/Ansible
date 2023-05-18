@@ -1,0 +1,20 @@
+---
+- name: tag1
+  hosts: webserver1
+  become_user: root
+  tasks:  
+  - yum:  
+      name: "{{ item }}"  
+      state: present  
+    loop:  
+    - httpd  
+    - memcached  
+    tags:  
+    - packages  
+  - template:  
+      src: templates/src.j2  
+      dest: /etc/foo.conf  
+    tags:  
+    - configuration  
+# command :- [$ ansible-playbook playbook_1.yaml --tags "configuration,packages"]
+# command :- [$ ansible-playbook playbook_1.yaml --skip-tags "packages"]
