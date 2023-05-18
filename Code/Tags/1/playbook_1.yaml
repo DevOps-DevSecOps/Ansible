@@ -16,5 +16,6 @@
       dest: /etc/foo.conf  
     tags:  
     - configuration  
+
 # command :- [$ ansible-playbook playbook_1.yaml --tags "configuration,packages"]
 # command :- [$ ansible-playbook playbook_1.yaml --skip-tags "packages"]
