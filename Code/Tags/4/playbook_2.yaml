@@ -14,4 +14,4 @@
       enabled: yes
     tags: nginx_service­­­­
 
-# command :- [$ ansible-playbook playbook_2.yaml --tags “nginx_service"]
+# command :- [$ ansible-playbook playbook_2.yaml --tags "nginx_service"]
