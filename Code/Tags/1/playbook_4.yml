@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: example template
+    template:
+      src: template-in.j2
+      dest: "/tmp/template-out.txt"
+    tags: wordpress-template
+
+# commands :- [$ ansible-playbook playbook_4.yml --tags wordpress-template]
