@@ -21,4 +21,4 @@
         msg: "This is fourth task"
       tags: fourth
 
-# command :- [$ ansible-playbook playbook_4.yaml --tags general]
+# command :- [$ ansible-playbook playbook_2.yml --tags general]
