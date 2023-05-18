@@ -19,8 +19,8 @@
       tags:
         - goodbye
 
-# command :- [$ ansible-playbook playbook_5.yaml --list-tags]
-# command :- [$ ansible-playbook playbook_5.yaml --tags hello]
-# command :- [$ ansible-playbook playbook_5.yaml --skip-tags goodbye]
+# command :- [$ ansible-playbook playbook_6.yaml --list-tags]
+# command :- [$ ansible-playbook playbook_6.yaml --tags hello]
+# command :- [$ ansible-playbook playbook_6.yaml --skip-tags goodbye]
 
 # Link :- [https://www.redhat.com/sysadmin/ansible-tags-fast-playbook-runs]
