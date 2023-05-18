@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+  - name: "install apache"
+    package:
+      name: apache2
+      state: present
+    notify: startapache
+  handlers:
+    - name: startapache
+      service:
+        name: apache2
+        state: started
