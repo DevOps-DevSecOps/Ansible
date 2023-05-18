@@ -1,0 +1,21 @@
+---
+- name: Handlers testing
+  hosts: 127.0.0.1
+  connection: local
+  become: true
+  tasks:
+    - name: Get the hostname
+      shell: hostname -s
+      register: hostname
+      notify:
+        - print hostname
+        - print IP
+  handlers:
+    - name: print hostname
+      debug:
+       var: hostname.stdout
+    - name: print IP
+      debug:
+       var: IP.stdout
+
+# Link :- https://ostechnix.com/use-handlers-in-ansible-playbooks/
