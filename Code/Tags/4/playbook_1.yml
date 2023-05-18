@@ -1,0 +1,25 @@
+---
+- hosts: all
+  tasks:
+  - name: create multiple files from a location
+    file:
+      path: ‘/home/ansible/{{ item }}’
+      state: touch
+    loop:
+    - file1
+    - file2
+    tags:
+    - create_file
+  - name: delete multiple files from a locatoion
+    file:
+      path: ‘/home/ansible/{{ item }}’
+      state: absent
+    loop:
+    - file1
+    - file2
+    tags:
+    - delete_file
+
+# command :- [$ ansible-playbook playbook_1.yml --tags “create_file, delete_file”]
+# command :- [$ ansible-playbook playbook_1.yml --skip-tags “delete_file”]
+# command :- [$ ansible-playbook playbook_1.yml --tags “create_file, delete_file” --list-tasks]
