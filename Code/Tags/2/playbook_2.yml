@@ -1,0 +1,18 @@
+---
+- name: Tags Demo Play
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Going to play
+      debug: msg="I am playing.."
+      tags: play
+    - name: Going to study
+      debug: msg="I am studying.."
+      tags: study
+
+# command :- [$ ansible-playbook playbook_3.yml --list-tags]
+# command :- [$ ansible-playbook playbook_3.yml -t play]
+# command :- [$ ansible-playbook playbook_3.yml -t study]
+# command :- [$ ansible-playbook playbook_3.yml -t play,study]
+# command :- [$ ansible-playbook playbook_3.yml --skip-tags play]
