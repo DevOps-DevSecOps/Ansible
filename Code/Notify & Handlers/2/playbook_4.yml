@@ -1,0 +1,19 @@
+---
+- name: Handlers grouping example
+  hosts: workers
+
+  tasks:
+    - name: restart everything
+      command: echo "this task will restart web and ftp services"
+      notify: "restart web and ftp services"
+      become: true
+
+  handlers:
+    - name: restart vsftpd
+      service: name=vsftpd state=restarted
+      listen: "restart web and ftp services"
+      become: true
+    - name: restart nginx
+      service: name=nginx state=restarted
+      listen: "restart web and ftp services"
+      become: true
