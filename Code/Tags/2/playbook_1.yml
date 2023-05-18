@@ -18,4 +18,3 @@
 
 # command :- [$ ansible-playbook playbook_3.yml --tags database]
 # command :- [$ ansible-playbook playbook_3.yml --skip-tags web]
-
