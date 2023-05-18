@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars:
+    car: "Corvette"
+  task:
+    - name: print message to stdout
+      debug:
+        msg: "My favorite car is "
+# changing the variable while execute a command - [$ ansible-playbook --extra-vars '{"car":"Tesla"}' /FOLDER_NAME/playbook_2.yml]
