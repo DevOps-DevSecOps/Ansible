@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars:
+    greetings: Hello everyone!
+  tasks:
+  - name: Ansible Simple Variable Example Usage
+    debug:
+      msg: ", Let’s learn Ansible variables"
