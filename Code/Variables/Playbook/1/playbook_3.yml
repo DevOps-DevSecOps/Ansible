@@ -1,0 +1,7 @@
+---
+- hosts: '{{ hosts }}'
+  remote_user: '{{ user }}'
+  tasks:
+     - ...
+
+# COMMANDS :- [$ ansible-playbook playbook_1.yaml --extra-vars "hosts=vipers user=starbuck"]
