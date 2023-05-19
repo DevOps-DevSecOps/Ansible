@@ -1,0 +1,10 @@
+---
+- name: Shell module example
+  hsots: webservers
+  tasks:
+  - name: Check system information
+    shell:
+      "lsb_release -a"
+    register: os_info
+  - debug:
+      msg: ""
