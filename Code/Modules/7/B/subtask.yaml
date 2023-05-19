@@ -1,0 +1,4 @@
+---
+- name: Debug some stuff
+  debug:
+    msg: "{{ item }}"
