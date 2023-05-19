@@ -1,0 +1,4 @@
+define a 'GROUPNAME_HOSTS - aws' in a "/etc/ansible/hosts".
+
+[aws]
+54.153.0.23
