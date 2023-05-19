@@ -1,0 +1,10 @@
+# override value for both roles
+---
+- hosts: all
+  roles:
+    - name: my-role
+      vars:
+        day_of_the_week: Monday
+    - name: my-role
+      vars:
+        day_of_the_week: Tuesday
