@@ -1,0 +1,7 @@
+---
+- hosts: all
+  roles:
+    - name: my-role
+    - name: my-role
+      vars:
+        day_of_the_week: Monday
