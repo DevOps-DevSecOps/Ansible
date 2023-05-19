@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: register variable
+      shell: "echo 'Hello World'"
+      register: output
+
+    - name: display output
+      debug:
+        var: output
+
+# Link :- https://gist.github.com/carlessanagustin/e05e5b128ed713e6972a6f9cf2e9b8a9
