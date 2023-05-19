@@ -1,0 +1,10 @@
+[app]
+server1
+server3
+
+[db]
+server2
+
+[db:vars]
+http_port=8080
+pkg=httpd
