@@ -1,0 +1,9 @@
+---
+- name: Ansible debug module in action
+  hosts: all
+  tasks:
+  - name: Print a simple statement
+    debug:
+      msg: "Hello World! Welcome to Linuxtechi"
+
+# Link :- https://www.linuxtechi.com/use-debug-module-ansible-playbook/
