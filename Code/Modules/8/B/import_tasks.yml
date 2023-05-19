@@ -1,0 +1,14 @@
+---
+- name: Example 4
+  hosts: all
+  remote_user: devops
+  become: true
+  tasks:
+  - name: Print Message
+    debug:
+      msg: "Hello, this is example 4"  
+  - name: importing a task from file
+    import_tasks: user_creation.yml
+    loop:
+      - peter
+      - john
