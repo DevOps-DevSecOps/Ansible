@@ -9,4 +9,4 @@
       vars:
         day_of_the_week: Tuesday
 
-# COMMAND :- [$ ansible-playbook -i localhost --connection=local -e day_of_the_week=Yesterday -v playbook_6.yml]
+# COMMAND :- [$ ansible-playbook -i localhost --connection=local -e day_of_the_week=Yesterday -v playbook_8.yml]
