@@ -1,0 +1,9 @@
+# replace a word with another word
+---
+- hosts: webservers
+  tasks:
+  - name: Replace example
+    replace:
+      path: /home/ansible/niranjan.txt
+      regexp: 'hello'
+      replace: "world"
