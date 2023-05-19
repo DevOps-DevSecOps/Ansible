@@ -1,0 +1,14 @@
+---
+- hosts: all
+  vars:
+    - username: sammy
+    - home: /home/sammy   
+  tasks:
+    - name: print variables
+      debug:
+        msg: "Username: {{ username }}, Home dir: {{ home }}"
+
+# commands :- [$ ansible-playbook -i inventory playbook_4.yaml -u sammy]
+
+
+# Link :- [https://www.digitalocean.com/community/tutorials/how-to-use-variables-in-ansible-playbooks]
