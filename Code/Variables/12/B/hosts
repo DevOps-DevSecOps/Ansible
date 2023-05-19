@@ -1,0 +1,6 @@
+[webservers]
+host1 
+host2
+
+[webservers:vars]
+http_port=80
