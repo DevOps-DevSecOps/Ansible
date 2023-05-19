@@ -1,0 +1,16 @@
+---
+- name: extra variable demo
+  hosts: all
+  vars:
+    fruit: "banana"
+  task:
+    - name: print message
+      ansible.builtin.debug:
+        msg: "fruit is {{ fruit }}"
+
+# commands :- [$ ansible-playbook --extra-vars="fruit=apple" -i FOLDER_NAME/FILE_NAME playbook_4.yml]
+# commands :- [$ ansible-playbook -i FOLDER_NAME/FILE_NAME --extra-vars="fruit=apple" playbook_4.yml]
+# commands :- [$ ansible-playbook -i FOLDER_NAME/FILE_NAME --extra-vars='{"fruit":"raspberry"}' playbook_4.yml]
+
+
+# Link :- [https://www.ansiblepilot.com/articles/pass-variables-to-ansible-playbook-in-command-line-ansible-extra-variables/]
