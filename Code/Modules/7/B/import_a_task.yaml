@@ -1,0 +1,11 @@
+---
+- name: import a task
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: import a task
+      import_tasks: subtask.yaml
+      loop:
+        - 123
+        - 456
+        - 789
