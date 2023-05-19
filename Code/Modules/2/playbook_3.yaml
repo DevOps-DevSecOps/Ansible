@@ -1,0 +1,9 @@
+---
+- name: Remove a file in the home directory only if it exists
+  hosts: webservers
+  tasks:
+  - name: Remove a file in the home directory
+    shell: rm $HOME/hello.txt
+    args:
+      removes: "$HOME/hello.txt"
+      warn: false
