@@ -1,0 +1,11 @@
+---
+- name: Environment variable example
+  hosts: webservers
+  tasks:
+  - name: Ansible Shell module set an environment variable
+    shell: echo $NEW_VAR
+    register: command_result
+    envnironment:
+      NEW_VAR: "john_doe"
+  - debug: 
+      msg: ""
