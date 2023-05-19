@@ -1,0 +1,8 @@
+# import variable from files
+---
+- hosts: all
+  vars_files:
+    - wed.yml
+    - fri.yml
+  roles:
+    - name: my-role
