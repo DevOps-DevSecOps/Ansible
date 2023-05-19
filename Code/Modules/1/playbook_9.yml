@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+    - name: Create a new user called mike
+      user:
+        name: mike
+        state: present
