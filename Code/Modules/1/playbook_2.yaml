@@ -1,0 +1,11 @@
+---
+- hosts: DEV_NIFI_AMB_RANGER_1.12
+  tasks:
+  - name: Install required packages
+    yum:
+      name: ['httpd', 'wget', 'nfs-utils', 'telnet', 'ntp', 'nscd', 'vsftpd']
+      state: present
+      update_cache: True
+    register: yum_output
+  - debug:
+      msg: "{{ yum_output }}"
