@@ -1,0 +1,14 @@
+# variable holds 5 different values – continent names, each of these values can easily be accessed using index 0 as the first variable
+---
+- hosts: all
+  vars:
+    continents:
+      - Africa
+      - Asia
+      - South America
+      - North America
+      - Europe      
+  tasks:
+  - name: Ansible List variable Example
+    debug:
+      msg: "{{ continents [1] }}"
