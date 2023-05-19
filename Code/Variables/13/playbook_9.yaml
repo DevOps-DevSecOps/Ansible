@@ -1,17 +1,17 @@
 # Prompt for user input with vars_prompt
 ---
- - name: Prompt for user input
-   hosts: localhost
-   gather_facts: no
-   vars_prompt:
-     - name: user_name
-       prompt: Enter your user name
-       private: no
-     - name: password
-       prompt: Enter your password
-       private: yes
-   tasks:
-     - debug:
-         msg: "The username is {{ user_name}} and password is {{ password }}"
+- name: Prompt for user input
+  hosts: localhost
+  gather_facts: no
+  vars_prompt:
+    - name: user_name
+      prompt: Enter your user name
+      private: no
+    - name: password
+      prompt: Enter your password
+      private: yes
+  tasks:
+    - debug:
+        msg: "The username is {{ user_name}} and password is {{ password }}"
 
 # command :- [$ ansible-playbook playbook_9.yaml] ---> It will prompt to ask "Enter your user name: " & "Enter your password: "
