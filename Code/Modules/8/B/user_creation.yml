@@ -1,0 +1,5 @@
+---
+- name: make available users in manage nodes
+  user:
+    name: "{{ item }}"
+    state: present
