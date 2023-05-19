@@ -1,0 +1,10 @@
+# set global variable and override on role
+---
+- hosts: all
+  vars:
+    day_of_the_week: Friday
+  roles:
+    - name: my-role
+    - name: my-role
+      vars:
+        day_of_the_week: Tuesday
