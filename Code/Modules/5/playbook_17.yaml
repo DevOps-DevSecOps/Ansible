@@ -1,0 +1,9 @@
+# variables are used to store values
+---
+- hosts: all
+  vars:
+    name: niranjan
+  tasks:
+  - name: Ansible Basic Variable Example
+    debug:
+     msg: "{{ name }}"
