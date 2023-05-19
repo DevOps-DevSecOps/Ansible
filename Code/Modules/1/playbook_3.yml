@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Execute /boot usage on Hosts
+    command: 'df -h /boot'
