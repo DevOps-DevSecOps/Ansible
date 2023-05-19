@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  vars:
+    username: deepak
+  tasks:
+  - debug:
+    msg: "USERNAME={{ username }}"
+
+# commands :- [$ ansible-playbook playbook_4.yaml -e username=golinuxcloud]
