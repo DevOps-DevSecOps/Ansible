@@ -1,0 +1,5 @@
+# load the role
+---
+- hosts: all
+  roles:
+    - name: my-role
