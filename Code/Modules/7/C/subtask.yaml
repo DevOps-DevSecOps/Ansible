@@ -1,0 +1,15 @@
+---
+- name: debug 1
+  debug:
+    msg: "Loop 1: {{ item }}"
+  loop:
+    - 123
+    - 456
+    - 789
+- name: debug 2
+  debug:
+    msg: "Loop 2: {{ item }}"
+  loop:
+    - 123
+    - 456
+    - 789
