@@ -1,0 +1,7 @@
+# global variables applicable through entire playbook
+---
+- hosts: all
+  vars:
+    day_of_the_week: Monday
+  roles:
+    - name: my-role
