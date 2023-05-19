@@ -1,0 +1,8 @@
+# load the role twice and change the default value for one of them
+---
+- hosts: all
+  roles:
+    - name: my-role
+      vars:
+        day_of_the_week: Monday
+    - name: my-role
