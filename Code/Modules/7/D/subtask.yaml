@@ -1,0 +1,7 @@
+---
+- name: debug 1
+  debug:
+    msg: "Loop 1: {{ item }}"
+- name: debug 2
+  debug:
+    msg: "Loop 2: {{ item }}"
