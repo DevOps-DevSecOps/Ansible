@@ -1,0 +1,12 @@
+# override variable from command line
+---
+- hosts: all
+  vars:
+    day_of_the_week: Friday
+  roles:
+    - name: my-role
+    - name: my-role
+      vars:
+        day_of_the_week: Tuesday
+
+# COMMAND :- [$ ansible-playbook -i localhost --connection=local -e day_of_the_week=Yesterday -v playbook_6.yml]
