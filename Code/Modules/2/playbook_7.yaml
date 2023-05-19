@@ -1,0 +1,11 @@
+---
+- name: Shell module example
+  hosts: webservers
+  tasks:
+  - name: List text files in tmp directory and save result in output file
+    shell: "ls -l /tmp | grep .txt > /tmp/dirlist.txt"
+  - name: Display the contents of the output file
+    shell: cat /tmp/dirlist.txt
+    register: displayfile
+  - debug:
+      msg: ""
