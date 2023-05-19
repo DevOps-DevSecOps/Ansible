@@ -1,0 +1,15 @@
+# change variable with set_fact
+---
+- hosts: all
+  vars:
+    day_of_the_week: Friday
+  pre_tasks:
+    - set_fact:
+        day_of_the_week: Wednesday
+  roles:
+    - name: my-role
+      vars:
+        day_of_the_week: Monday
+    - name: my-role
+      vars:
+        day_of_the_week: Tuesday
