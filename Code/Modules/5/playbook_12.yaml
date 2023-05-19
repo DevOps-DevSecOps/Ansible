@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: Ansible zip directory example
+    archive:
+      path:
+      - /home/ansible
+      dest: /home/ansible/niranjan.zip
+      format: zip
