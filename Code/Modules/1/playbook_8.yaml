@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  become: yes
+  become_user: cherry
+  tasks:
+    - name: Install Apache as root user.
+      apt:
+        name: apache2
+        state: latest
