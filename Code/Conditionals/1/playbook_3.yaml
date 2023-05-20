@@ -1,0 +1,9 @@
+---
+- name: install Apache webserver
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Install Apache on Ubuntu Server
+      apt: name=apache2 state=present
+      become: yes
+      when: ansible_os_family == "Debian" and ansible_distribution_version == "18.04"
