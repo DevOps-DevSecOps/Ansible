@@ -1,0 +1,10 @@
+---
+- name: install Apache webserver
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Install Apache on Ubuntu Server
+      apt: name=apache2 state=present
+      when: ansible_distribution == 'CentOS' or
+            ansible_distribution == 'Red Hat Enterprise Linux' or
+            ansible_distribution == 'RedHat'
