@@ -1,0 +1,12 @@
+---
+- name: Restart Apache Web-Server
+  hosts: workers
+  tasks:
+    - name: Start Apache service on CentOS or RedHat system
+      service: name=httpd  state=restarted enabled=yes
+      become: yes
+      when: ansible_os_family == "RedHat"
+    - name: Start Apache service on Ubuntu Server
+      service: name=apache2 state=restarted enabled=yes
+      become: yes
+      when: ansible_os_family == "Debian"
