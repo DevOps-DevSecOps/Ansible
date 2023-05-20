@@ -1,0 +1,8 @@
+---
+- import_playbook: common_roles.yml
+- import_playbook: staging_roles.yml
+  when: env == 'staging'
+- name: configure database servers
+  hosts: "{{ env }}_database"
+  roles:
+    - postgres
