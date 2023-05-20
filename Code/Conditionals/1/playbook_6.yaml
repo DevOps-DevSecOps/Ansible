@@ -1,0 +1,17 @@
+---
+- name: Ansible tasks to work on Ansible When
+# Defining the remote server where Ansible will run
+  hosts: web
+  remote_user: ubuntu # Using Remote host as ubuntu
+  become: true # Run the tasks as an elevated user (sudo)
+  tasks:
+# (Task-1) Checks if ansible_os_family == "RedHat" and then Installs Apache on Remote Node
+    - name: Install Apache on CentOS  Server
+      yum: name=httpd  state=present
+      become: yes
+      when: ansible_os_family == "RedHat"
+# (Task-2) Checks if ansible_os_family == "Debian" and then Installs Apache on Remote Node
+    - name: Install Apache on Ubuntu Server
+      apt: name=apache2 state=present
+      become: yes
+      when: ansible_os_family == "Debian"
