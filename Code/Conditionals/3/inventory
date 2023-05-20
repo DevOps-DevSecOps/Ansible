@@ -1,0 +1,5 @@
+stapp01 ansible_host=172.16.238.10 ansible_ssh_pass=PASSWORD ansible_user=USER_NAME
+
+stapp02 ansible_host=172.16.238.11 ansible_ssh_pass=PASSWORD ansible_user=USER_NAME
+
+stapp03 ansible_host=172.16.238.12 ansible_ssh_pass=PASSWORD ansible_user=USER_NAME
