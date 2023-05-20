@@ -1,0 +1,11 @@
+---
+- name: Java Installation playbook
+# Defining the remote server where the package will be deployed 
+  hosts: myserver
+  remote_user: ubuntu   # Using Remote user as ubuntu
+  become: true
+  tasks:  
+  roles:
+     - role: java
+       # Execute the task only if the remote_user is on a Debian OS.
+       when: ansible_facts['os_family'] == 'Debian'
