@@ -1,0 +1,6 @@
+---
+- hosts: all
+  vars:
+    ansible_user: lola
+  tasks:
+    - command: i'll connect as lola!
