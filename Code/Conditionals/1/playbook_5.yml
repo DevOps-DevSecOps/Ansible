@@ -1,0 +1,11 @@
+---
+- name: install Apache Web-Server
+  hosts: all
+  tasks:
+  - name: "shut down CentOS 6 systems"
+    become: true
+    become_user: root
+    command: /sbin/shutdown -t now
+    when:
+      - ansible_distribution == "CentOS"
+      - ansible_distribution_major_version == "6"
