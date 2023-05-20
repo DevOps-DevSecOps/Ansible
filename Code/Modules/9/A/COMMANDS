@@ -1,0 +1,3 @@
+$ ansible-playbook web.yml --extra-vars "server_type=web"
+
+$ ansible-playbook database.yml --extra-vars "server_type=database"
