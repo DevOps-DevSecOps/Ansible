@@ -1,0 +1,21 @@
+---
+- name: Ansible When Single task example
+  hosts: web
+  remote_user: ubuntu
+  become: true
+  gather_facts: yes
+  tasks:
+# (Task-1): To shutdown the remote node if distribution is CentOS with a major Version 6 
+    - name: Shut down CentOS 6 systems
+      command: /sbin/shutdown -t now
+      when:
+        - ansible_facts['distribution'] == "CentOS"
+        - ansible_facts['distribution_major_version'] == "6"
+# (Task-2): To shutdown the remote node if os_family is CentOS. 
+    - name: Shut down CentOS flavored systems
+      command: /sbin/shutdown -t now
+      when: ansible_facts['os_family'] == "CentOS"
+# (Task-3): To shutdown the remote node if os_family is Ubuntu.
+    - name: shutdownUbuntuservers
+      command: /sbin/shutdown -t now
+      when: ansible_facts['os_family']=="Ubuntu"
