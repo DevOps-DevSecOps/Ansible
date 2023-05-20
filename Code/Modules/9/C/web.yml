@@ -1,0 +1,6 @@
+---
+- name: configure web servers
+  hosts: "{{ env }}_web"
+  roles:
+    - nginx
+    - my_site
