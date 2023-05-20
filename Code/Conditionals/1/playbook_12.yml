@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+    - include: Ubuntu.yml
+      when: ansible_os_family == "Ubuntu"
+    - include: RHEL.yml
+      when: ansible_os_family == "RedHat"
