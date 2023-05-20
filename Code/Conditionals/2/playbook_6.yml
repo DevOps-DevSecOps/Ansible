@@ -1,0 +1,13 @@
+---
+- name: Pipeline call
+  hosts: all
+  gather_facts: false
+  vars:
+    trigger_pipeline: no
+  tasks:
+   - name: Trigger Pipeline
+     debug:
+       msg: Running pipeline
+     when: trigger_pipeline == "execute"
+
+# Command to run ansible playbook with environment variables - [$ ansible-playbook playbook_6.yml -e trigger_pipeline=execute]
