@@ -1,0 +1,5 @@
+---
+- name: install roles for staging only
+  hosts: "{{ env }}_{{ server_type }}"
+  roles:
+    - debug-tools
