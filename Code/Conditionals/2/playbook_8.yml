@@ -1,0 +1,16 @@
+# if the return code is zero, if the return code is non zero
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: verify httpd version
+    command: /usr/sbin/httpd -v
+    register: version
+    ignore_errors: True
+  - name: print httpd version
+    debug:
+      msg: "{{ version }}"
+    when: "version.rc == 0"
+  - name: install httpd 
+    yum: name=httpd state=present
+    when: "version.rc != 0"
