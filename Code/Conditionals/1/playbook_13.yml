@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: Reboot Debian or Ubuntu Linux box
+    command: /sbin/shutdown -r now
+    when: (ansible_distribution == "Debian" ) or (ansible_distribution == "Ubuntu")
