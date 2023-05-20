@@ -1,0 +1,3 @@
+$ ansible-playbook master.yml --extra-vars "env=staging server_type=web"
+
+$ ansible-playbook master.yml --extra-vars "env=staging server_type=database"
