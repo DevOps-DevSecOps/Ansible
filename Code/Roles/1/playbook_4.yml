@@ -1,0 +1,7 @@
+---
+- hosts: 127.0.0.1
+  roles:
+    - { role: common_settings }
+    - { role: apache, http_port: 8080 }
+    - { role: app_user, name: Ian    }
+    - { role: something, foo: 12 }
