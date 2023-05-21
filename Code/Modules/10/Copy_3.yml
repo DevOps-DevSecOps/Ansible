@@ -1,0 +1,12 @@
+---
+- name: copy files to destination
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: copy src.txt to files/backup_test and create a backup of src.txt
+      copy:
+        src: files/src.txt
+        dest: files/backup_test/
+        backup: yes 
+      tags:
+        - backup
