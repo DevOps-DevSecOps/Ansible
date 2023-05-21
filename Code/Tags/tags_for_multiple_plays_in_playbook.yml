@@ -1,0 +1,13 @@
+# this example tags for multiple plays in a playbook.
+
+---
+- hosts: all
+  tags:
+  - bar
+  tasks:
+    ...
+
+- hosts: all
+  tags: [ foo ]
+  tasks:
+    ...
