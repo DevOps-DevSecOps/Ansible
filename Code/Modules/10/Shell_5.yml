@@ -1,0 +1,15 @@
+---
+- name: Shell Examples
+  hosts: testservers
+  vars:
+    - script-to-start: "./startbatchupload.sh"
+  tasks:
+  - name: Start the DB batch upload
+    become: yes
+    shell:
+        "{{ script-to-start }}"
+    args:
+      chdir: "/apps/dbscripts/"
+      creates: "startbatchupload.lock" 
+    register: fileout
+    tags: fileout
