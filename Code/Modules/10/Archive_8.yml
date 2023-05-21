@@ -1,0 +1,18 @@
+---
+- name: Ansible archive Examples
+  user: vagrant
+  hosts: testserver
+  tasks:
+    - name: Compress the file using BZ2
+      become: yes
+      archive:
+        path: /apps/tomcat/logs/catalina.2019-07-24.log
+        dest: /apps/tomcat/catalina.2019-07-24.log.bz2
+        format: bz2
+    
+    - name: Compress the Directory using BZ2
+      become: yes
+      archive:
+        path: /apps/tomcat/
+        dest: /apps/tomcat-bkp.tar.bz2
+        format: bz2
