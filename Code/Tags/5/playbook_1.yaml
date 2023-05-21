@@ -17,3 +17,7 @@
       dest: /etc/foo.conf
     tags:
     - configuration
+
+# commands :- [$ ansible-playbook playbook_1.yaml --tags "configuration,packages"]
+# commands :- [$ ansible-playbook playbook_1.yaml --skip-tags "packages"]
+# commands :- [$ ansible-playbook playbook_1.yaml --tags "configuration,packages" --list-tasks]
