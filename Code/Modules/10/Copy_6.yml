@@ -1,0 +1,14 @@
+# copy only directory contents
+
+---
+- name: copy module for directories
+  hosts: localhost
+  connection: local
+  tasks:    
+    - name: copy contents of dir1 to /tmp/dir1_contents
+      copy:
+        src: dir1/
+        dest: /tmp/dir1_contents/
+        directory_mode:
+      tags:
+        - dircontent
