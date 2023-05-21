@@ -1,0 +1,28 @@
+---
+- name: Playbook to copy file and uncompress
+  hosts: appservers
+  vars:
+    - userid : "weblogic"
+    - oracle_home: "/opt/oracle"
+    - jdk_instl_file: "server-jre-8u191-linux-x64.tar.gz"
+
+  tasks:
+  - name : Copy the Java JDK files
+    become: yes
+    become_user: "{{ userid }}"
+    tags: app,cpbinaries
+    copy:
+      src: "{{ item }}"
+      dest: "{{ oracle_home }}"
+      mode: 0755
+    with_items:
+      - "{{ jdk_instl_file }}"
+
+  - name: Install java
+    become: yes
+    become_user: "{{ userid }}"
+    tags: javainstall
+    shell: "tar xvfz {{ oracle_home }}/{{ jdk_instl_file }}"
+    args:
+      chdir: "{{ oracle_home }}"
+    register: javainstall
