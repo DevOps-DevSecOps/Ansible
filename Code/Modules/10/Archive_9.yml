@@ -1,0 +1,31 @@
+---
+- name: Ansible archive Examples
+  user: vagrant
+  hosts: testserver
+  tasks:
+    - name: Using Wild card and choosing the catalina logs only
+      become: yes
+      archive:
+        path: /apps/tomcat/logs/catalina*.log
+        dest: /apps/tomcat/catalinalogs.tar.bz2
+        format: bz2
+
+    - name: Using Wild card and choosing the access logs only
+      become: yes
+      archive:
+        path: /apps/tomcat/logs/*access*.txt
+        dest: /apps/tomcat/accesslogs.tar.bz2
+        format: bz2
+
+    # Archive all the logs except access logs
+    - name: Using wild card for Including and Excluding
+      become: yes
+      archive:
+        path: 
+        - /apps/tomcat/logs/*
+        - /var/log/tomcat/*
+        dest: /apps/tomcat/logfiles.tar.bz2
+        format: bz2
+        exclude_path:
+        - /apps/tomcat/logs/*access*.txt
+        - /var/log/tomcat/*access*.txt
