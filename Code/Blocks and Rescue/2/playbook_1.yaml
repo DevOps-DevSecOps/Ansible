@@ -1,0 +1,22 @@
+---
+- name: Ansible Blocks
+  hosts: server1
+  gather_facts: false
+
+  tasks:
+    - name: List usr directory content
+      command: "ls -l /usr/"
+      become: yes
+
+    - name: List root partition content
+      command: "ls -l /root/"
+      become: yes
+
+    - name: List ansible user's home directory content
+      command: "ls -l ~/"
+
+    - name: List bin diretcory content
+      command: "ls -l /bin/"
+      become: yes
+
+# I have used "become: yes" 3 times which is just increasing the number of lines in the playbook.
