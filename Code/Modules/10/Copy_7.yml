@@ -1,0 +1,21 @@
+# copy raw content to file
+
+---
+- name: copy files to destination
+  hosts: localhost
+  connection: local
+  vars:
+    somedict:
+      key1: value1
+      key2: value2
+  tasks:
+    - name: copy content to content_dest.txt
+      copy:
+        content: |
+          Hello from ansible.
+          This is a sample file.
+          This is a sample dict,
+          {{ somedict }}
+        dest: files/content_dest.txt
+      tags:
+        - content
