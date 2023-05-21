@@ -1,0 +1,14 @@
+---
+- name: Shell Examples
+  hosts: testservers
+  tasks:
+
+  - name: Start tomcat
+    become: yes
+    become_user: tomcat
+    shell:
+        "./startup.sh"
+    args:
+      chdir: "/apps/tomcat/tomcat8/bin" 
+    register: datecmd
+    tags: datecmd
