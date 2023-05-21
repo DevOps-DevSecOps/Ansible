@@ -1,0 +1,10 @@
+---
+- name: Ansible archive Examples
+  user: vagrant
+  hosts: testserver
+  tasks:
+    - name: Compress the file using Default format
+      become: yes
+      archive:
+        path: /apps/tomcat/conf/server.xml
+        dest: /apps/tomcat/server.xml.gz
