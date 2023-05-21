@@ -7,7 +7,7 @@
     become: yes
     become_user: tomcat
     shell:
-        "./startup.sh"
+       "./startup.sh"
     args:
       chdir: "/apps/tomcat/tomcat8/bin" 
     register: datecmd
