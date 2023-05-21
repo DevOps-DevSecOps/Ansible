@@ -1,0 +1,13 @@
+# remove the Source files after archiving
+
+---
+- name: Ansible archive Examples
+  user: vagrant
+  hosts: testserver
+  tasks:
+    - name: Compress the file and remove
+      become: yes
+      archive:
+        path: /apps/tomcat/logs/localhost-access.log
+        dest: /apps/tomcat/localhost-access.log.gz
+        remove: yes
