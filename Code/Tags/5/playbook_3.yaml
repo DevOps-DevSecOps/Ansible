@@ -1,0 +1,8 @@
+---
+- name: tag for debug
+  hosts: web
+  vars:
+    showmevar: variables
+  tasks:
+    - debug: msg="{{ showmevar }}"
+      tags: [ never, debug ]
