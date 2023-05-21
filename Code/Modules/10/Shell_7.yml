@@ -1,0 +1,14 @@
+# copy entire directory - the entire directory dir1 and its contents will be recursively copied to the destination /tmp as /tmp/dir1.
+
+---
+- name: copy module for directories
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: copy dir1 to /tmp
+      copy:
+        src: dir1
+        dest: /tmp/
+        directory_mode:
+      tags:
+        - parentdir
