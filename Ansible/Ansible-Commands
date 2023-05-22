@@ -60,6 +60,7 @@ ansible all -i FILE_NAME -m ping
 ansible all -i FILE_NAME -m ping -u USER_NAME
 ansible all -i FILE_NAME --key-file ~/.ssh/PRIVATE_KEY_FILE_NAME -m ping -u USER_NAME
 ansible GROUPNAME_HOSTS -i FILE_NAME -m ping
+ansible GROUPNAME_HOSTS -i FILE_NAME -m shell -a "ls -lrt /FOLDER_NAME/FOLDER_NAME"
 ● Dynamic Inventory
 ansible -i FILE_NAME us-east-1d -u USER_NAME -m ping
 ansible -i /FOLDER_NAME/FILE_NAME.yaml ec2 -m ping --private-key=/home/USER_NAME/FILE_NAME.pem
@@ -69,7 +70,8 @@ ansible -i /FOLDER_NAME/FILE_NAME.yaml ec2 -m apt -a 'name=git state=present' --
 [Playbooks]
 ● Static Inventory
 ansible-playbook FILE_NAME.yml
-ansible-playbook FILE_NAME.yml -vv
+ansible-playbook FILE_NAME.yml -c local
+ansible-playbook FILE_NAME.yml -vvv
 ansible-playbook FILE_NAME.yml -u USER_NAME
 ansible-playbook FILE_NAME.yml --ask-become-pass                                                        # need to provide the password for the sudo privilege
 ansible-playbook FILE_NAME.yml --list-tasks
@@ -81,10 +83,12 @@ ansible-playbook FILE_NAME.yml --check --diff
 ansible-playbook FILE_NAME.yml --check --diff --limit HOSTNAME_OR_HOSTIPADDRESS
 ansible-playbook FILE_NAME.yml -l HOSTNAME_OR_HOSTIPADDRESS
 ansible-playbook FILE_NAME.yml -e NAME=VALUE
+ansible-playbook FILE_NAME.yml -e "NAME=VALUE"
 ansible-playbook FILE_NAME.yml --extra-vars "NAME=VALUE"
 ansible-playbook FILE_NAME.yml --extra-vars "NAME=VALUE NAME=VALUE"
 ansible-playbook FILE_NAME.yml --extra-vars="NAME=VALUE"
 ansible-playbook FILE_NAME.yml --extra-vars '{"NAME":"VALUE"}'                                          # JSON extra variable
+ansible-playbook FILE_NAME.yml --extra-vars '{ "VARIABLE": "VALUE", "VARIABLE": "VALUE" }'
 ansible-playbook FILE_NAME.yml --list-tags                                                              # list the tags in a playbook
 ansible-playbook FILE_NAME.yml -t TAG_NAME
 ansible-playbook FILE_NAME.yml -t TAG_NAME,TAG_NAME
@@ -99,9 +103,11 @@ ansible-playbook FILE_NAME.yml --skip-tags "TAG_NAME,TAG_NAME"
 ● Custom Inventory
 ansible-playbook -i FILE_NAME FILE_NAME.yml
 ansible-playbook -i FILE_NAME -i FILE_NAME FILE_NAME.yml
+ansible-playbook -i FILE_NAME FILE_NAME.yml -C                                                           # dry run the playbook
 ansible-playbook -i FILE_NAME FILE_NAME.yml -v
 ansible-playbook -i FILE_NAME FILE_NAME.yml -u USER_NAME
 ansible-playbook -i FOLDER_NAME/FILE_NAME FILE_NAME.yaml --become-user=USER_NAME
+ansible-playbook -i FILE_NAME FILE_NAME.yml --syntax-check
 ansible-playbook -i /FOLDER_NAME/FOLDER_NAME /FOLDER_NAME/FILE_NAME.yml --syntax-check
 ansible-playbook -i /FOLDER_NAME/FOLDER_NAME /FOLDER_NAME/FILE_NAME.yml --connection=local --sudo
 ansible-playbook -i FILE_NAME FILE_NAME.yml --extra-vars="NAME=VALUE"
@@ -109,6 +115,7 @@ ansible-playbook -i FILE_NAME FILE_NAME.yml --extra-vars='{"NAME":"VALUE"}'     
 ansible-playbook -i FILE_NAME FILE_NAME.yml --tags=TAG_NAME
 ansible-playbook -i FILE_NAME FILE_NAME.yml --tags=TAG_NAME,TAG_NAME
 ansible-playbook -i FILE_NAME FILE_NAME.yml --skip-tags=TAG_NAME
+ansible-playbook -i FILE_NAME FILE_NAME.yml --key-file=FILE_NAME.pem
 
 [Vault]
 ansible-vault create FILE_NAME.yml                                                      # create new encrypted file
