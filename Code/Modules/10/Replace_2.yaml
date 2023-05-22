@@ -1,0 +1,20 @@
+---
+- name: Replace line in file examples
+  hosts: web
+
+  handlers:
+    - name: restart apache
+      become: yes
+      become_user: root
+      service: name=httpd state=restarted
+
+  tasks:
+  - name: "Replace line in file examples"
+    become: yes
+    become_user: root
+    replace: 
+      path: /var/www/html/index.html
+      regexp: '[F|f]ox'
+      replace: 'racoon'
+      backup: yes 
+    notify: restart apache
