@@ -1,0 +1,14 @@
+---
+ - hosts: localhost
+   vars:
+    x: 45
+    my_name: "DevOps"
+   vars_prompt:
+    name: y
+    prompt: Enter the value for y
+   gather_facts: false
+   tasks:
+   - debug:
+      msg:
+       - "The x value is: {{x}}"
+       - "The my_name value is: {{my_name}}"
