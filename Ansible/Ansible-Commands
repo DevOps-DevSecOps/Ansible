@@ -13,6 +13,8 @@ ansible-inventory -i FILE_NAME.yml --graph
 [Ad-Hoc]
 ● Static Inventory
 ansible all --list-hosts
+ansible all -a whoami -u USER_NAME
+ansible all -a whoami -u USER_NAME --become
 ansible all -m ping
 ansible all -m ping -u USER_NAME
 ansible all -m setup
@@ -22,6 +24,7 @@ ansible all -m user -a "name=foo password=<crypted password here>"              
 ansible HOSTNAME_OR_HOSTIPADDRESS -m ping
 ansible HOSTNAME_OR_HOSTIPADDRESS -m setup
 ansible GROUPNAME_HOSTS --list-hosts
+ansible GROUPNAME_HOSTS -a "echo Hello World" -u USER_NAME
 ansible GROUPNAME_HOSTS -m setup
 ansible GROUPNAME_HOSTS -m ping
 ansible GROUPNAME_HOSTS -m shell -a 'echo $TERM'
@@ -56,6 +59,7 @@ ansible GROUPNAME_HOSTS -m service -a "name=httpd state=stopped"                
 ansible GROUPNAME_HOSTS -m service -a "name=httpd state=stopped" --become
 ansible GROUPNAME_HOSTS -m git -a "repo=https://foo.example.org/repo.git dest=/srv/myapp version=HEAD"
 ● Custom Inventory
+ansible all -i FILE_NAME -a "hostname" -u USER_NAME
 ansible all -i FILE_NAME -m ping
 ansible all -i FILE_NAME -m ping -u USER_NAME
 ansible all -i FILE_NAME --key-file ~/.ssh/PRIVATE_KEY_FILE_NAME -m ping -u USER_NAME
@@ -84,6 +88,7 @@ ansible-playbook FILE_NAME.yml --check --diff --limit HOSTNAME_OR_HOSTIPADDRESS
 ansible-playbook FILE_NAME.yml -l HOSTNAME_OR_HOSTIPADDRESS
 ansible-playbook FILE_NAME.yml -e NAME=VALUE
 ansible-playbook FILE_NAME.yml -e "NAME=VALUE"
+ansible-playbook FILE_NAME.yml -e "VARIABLE='VALUE' VARIABLE='VALUE'"
 ansible-playbook FILE_NAME.yml --extra-vars "NAME=VALUE"
 ansible-playbook FILE_NAME.yml --extra-vars "NAME=VALUE NAME=VALUE"
 ansible-playbook FILE_NAME.yml --extra-vars="NAME=VALUE"
