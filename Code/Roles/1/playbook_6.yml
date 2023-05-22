@@ -1,0 +1,9 @@
+---
+- hosts: "{{ nodes }}"
+  vars_files:
+    - vars/main.yml
+  roles:
+    - { role: geerlingguy.apache }
+
+# COMMANDS :- [$ ansible-playbook playbook_6.yml --extra-vars "nodes=webgroup”]
+# COMMANDS :- [$ ansible-playbook playbook_6.yml --extra-vars "nodes=appgroup”]
