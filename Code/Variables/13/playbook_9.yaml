@@ -12,6 +12,6 @@
       private: yes
   tasks:
     - debug:
-        msg: "The username is {{ user_name}} and password is {{ password }}"
+        msg: "The username is {{ user_name }} and password is {{ password }}"
 
 # command :- [$ ansible-playbook playbook_9.yaml] ---> It will prompt to ask "Enter your user name: " & "Enter your password: "
