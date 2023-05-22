@@ -1,0 +1,4 @@
+$ ansible-playbook -vvv Playbook.yaml
+
+[skip user prompt and accept arguments via command line]
+$ ansible-playbook -vvv Playbook.yaml -e "website='Crunchify.com' country='United States'"
