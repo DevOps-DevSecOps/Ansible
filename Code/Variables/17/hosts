@@ -1,0 +1,6 @@
+[local]
+localhost ansible_connection=local ansible_python_interpreter=python
+[defaults]
+host_key_checking=false
+[crunchify]
+localhost
