@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  vars_prompt:
+  - name: foo
+    prompt: Please enter a value for the 'foo' variable
+    private: no
+
+  - name: bar
+    prompt: Please enter a value for the 'bar' variable
+    private: yes
+
+  tasks:
+  - debug:
+      msg: the foo variable contains a value of {{ foo }}
+
+  - debug:
+      msg: the bar variable contains a value of {{ bar }}
