@@ -1,0 +1,14 @@
+---
+- name: Examples of lineinfile
+  hosts: web
+  tasks:
+    - name: "Example7: Update the ServerName"
+      become: yes
+      become_user: root
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        insertafter: '#ServerName www.example.com:80'
+        line: "ServerName www.middlewareinventory.com:80"
+        state: present  
+        # Command to Validate the Configuration and %s is a working copy of the file
+        validate: "httpd -t -f %s"
