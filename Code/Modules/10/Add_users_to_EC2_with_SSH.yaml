@@ -32,3 +32,5 @@
     with_items:
       - { name: 'sarav', key: 'sarav.pub', userstate: 'present'}
       - { name: 'hanu', key: 'hanu.pub', userstate: 'present'}
+
+# COMMAND :- [$ ssh -p 2222 -i ~/.ssh/id_rsa USER_NAME@IP_ADDRESS]
