@@ -6,3 +6,4 @@ ansible localhost -m setup
 ● Static Inventory
 ansible-playbook FILE_NAME.yml --check --diff --limit localhost
 ansible-playbook FILE_NAME.yml --tags TAG_NAME --limit localhost
+ansible-playbook FILE_NAME.yml --connection=local -e "ansible_python_interpreter=/usr/local/bin/python3"
