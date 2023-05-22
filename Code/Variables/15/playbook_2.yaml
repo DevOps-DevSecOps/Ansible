@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes
+
+  vars_prompt:
+    - name: username
+      prompt: Please provide the username
+      default: foo
+      private: no
+
+  tasks:
+    - name: Make sure user exists
+      ansible.builtin.user:
+        name: '{{ username }}'
