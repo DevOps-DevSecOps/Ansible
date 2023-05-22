@@ -1,0 +1,12 @@
+---
+- name: Replace line in file examples
+  hosts: web
+  tasks:
+  - name: "Replace line in file examples"
+    become: yes
+    become_user: root
+    replace: 
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '(^ServerName\s)(.*)$'
+      replace: '\1www.newdomain.com'
+      backup: yes
