@@ -1,0 +1,27 @@
+---
+- name: Examples of lineinfile
+  hosts: web
+    
+  tasks:
+    - name: "Example6: Comment the Exisiting ServerAdmin Line"
+      become: yes
+      become_user: root
+      tags: lineinfileexample6_1
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: '(^ServerAdmin .*)'
+        line: '# \1'
+        backrefs: yes
+        state: present
+      register: lineinfileexample6_1
+
+    - name: "Example6: Add a New ServerAdmin Before the Commented Line"
+      become: yes
+      become_user: root
+      tags: lineinfileexample6_2
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        insertbefore: '# ServerAdmin .*'
+        line: "ServerAdmin aksarav@middlewareinventory.com"
+        state: present  
+      register: lineinfileexample6_2
