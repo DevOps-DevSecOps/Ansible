@@ -1,0 +1,16 @@
+---
+- name: Examples of lineinfile
+  hosts: web
+    
+  tasks:
+    - name: "Example1: Validate if a String or line is present in the file"
+      become: yes
+      become_user: root
+      tags: lineinfileexample
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        insertafter: "^Listen [0-9]+" 
+        line: "Listen 443"
+        firstmatch: yes
+        state: present  
+      register: lineinfileexample
