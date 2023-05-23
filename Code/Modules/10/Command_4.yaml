@@ -8,6 +8,5 @@
         command: "httpd -k restart"
         when: ansible_hostname == "mwiweb02"
 
-
       - debug:
           var: httpdresout.stdout_lines
