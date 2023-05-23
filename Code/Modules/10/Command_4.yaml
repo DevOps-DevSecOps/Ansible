@@ -1,0 +1,13 @@
+---
+  - name: restart apache web server
+    hosts: testservers
+    tasks:
+      - name: restartapache
+        register: httpdresout
+        become: yes
+        command: "httpd -k restart"
+        when: ansible_hostname == "mwiweb02"
+
+
+      - debug:
+          var: httpdresout.stdout_lines
