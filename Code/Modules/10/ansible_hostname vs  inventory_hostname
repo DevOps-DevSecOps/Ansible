@@ -1,0 +1,9 @@
+[ansible_hostname]
+It takes the hostname from the facts collected during the gather_facts this would mostly match to the uname -n or hostname command that run on the remote machine.
+If the Gather_facts is set to NO the ansible_facts variable would not be available to use in playbook.
+It not available in ad_hoc command.
+
+[inventory_hostname]
+It takes the hostname from the inventory configuration or the hosts file. this may not match the hostname configuration of the remote system.
+It would always be available to use in playbook.
+It available for both playbook and ad-hoc command.
