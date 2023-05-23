@@ -1,0 +1,7 @@
+[ec2servers]
+53.45.21.70
+58.43.89.21
+
+[vagrantservers]
+mwiapp01.example.com
+mwiapp02.example.com
