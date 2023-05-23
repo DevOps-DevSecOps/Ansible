@@ -1,0 +1,14 @@
+[prodservers]
+192.31.70.140
+192.31.74.88
+192.31.70.169
+192.31.70.212
+192.31.70.76
+192.31.71.201
+192.31.71.240
+
+[prodservers:vars]
+ansible_port = 22
+ansible_user = ec2-user
+private_key_file = /Users/laptopuser/.ssh/id_rsa
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
