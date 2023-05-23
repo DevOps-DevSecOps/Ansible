@@ -64,6 +64,7 @@ It given command will be executed on all selected nodes.
 
 [copy]
 It copies a file from the local or remote machine to a location on the remote machine.
+To copy files from ansible control machine local to the remote machine.
 
 [cron]
 It manage crontab and environment variables entries.
@@ -94,6 +95,7 @@ It works like copy, but in reverse.
 It copy files from remote locations to the local box.
 It is used for fetching files from remote machines and storing them locally in a file, organized by hostname.
 Files that already exist at dest will be overwritten if they are different than the src.
+To copy files from remote host to local ansible control machine.
 
 [file]
 It manage the files, symlinks, directories.
@@ -199,6 +201,9 @@ It execute shell commands on targets remote node.
 
 [sts_assume_role]
 It assume a role using AWS Security Token Service and obtain temporary credentials.
+
+[synchronize]
+Its similar like an rsync command.
 
 [systemd]
 It controls systemd services on remote hosts.
