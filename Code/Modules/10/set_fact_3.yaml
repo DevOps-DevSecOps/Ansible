@@ -1,0 +1,26 @@
+---
+- name: Ansible List Examples
+  hosts: localhost
+  tasks:
+    - name: Create a List variable and print it
+      set_fact: 
+        Countries : ['India','Japan', 'Norway', 'Netherlands', 'Switzerland', 'Germany', 'United States of America']
+    - name: Print the Countries Ansible list
+      debug: var=Countries
+    - name: Print the first element using Index Number
+      debug: 
+        msg: "{{Countries[0]}}"
+    
+    - name: Print the first element using Ansible filter
+      debug: 
+        msg: "{{ Countries | first }}"
+    
+    - name: Print the third element using Index Number
+      debug: 
+        msg: "{{Countries[2]}}"
+    - name: Print the last element using Ansible filter - last
+      debug: 
+        msg: "{{ Countries | last }}"
+    - name: Print the last element using length and Index Number
+      debug: 
+        msg: "{{ Countries [Countries | length - 1 ] }}"
