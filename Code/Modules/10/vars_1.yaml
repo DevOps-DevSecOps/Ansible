@@ -1,0 +1,11 @@
+---
+- name: Ansible List Examples
+  hosts: localhost
+  vars:
+    Continents: ["Asia","Africa","Europe","North America","South America","Antarctica","Australia"]
+    Countries : ['India','Japan', 'Norway', 'Netherlands', 'Switzerland', 'Germany', 'United States of America']
+  tasks:
+    - name: Print the Continents
+      debug: var=Continents
+    - name: Print the Countries
+      debug: var=countries
