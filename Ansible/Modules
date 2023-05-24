@@ -193,8 +193,16 @@ It manage logging facility of an s3 bucket in AWS.
 [s3_website]
 Configure an s3 bucket as a website.
 
+[script]
+It runs a local script on a remote node after transferring it.
+The local script at path will be transferred to the remote node and then executed.
+The script will be processed through the shell environment on the remote node.
+
 [service]
 It controls services on remote hosts.
+
+[set_fact]
+It allows setting new variables.
 
 [shell]
 It execute shell commands on targets remote node.
