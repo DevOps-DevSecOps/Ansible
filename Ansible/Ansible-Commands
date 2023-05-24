@@ -13,11 +13,11 @@ ansible-inventory -i FILE_NAME.yml --graph
 [Ad-Hoc]
 ● Static Inventory
 ansible all --list-hosts
-ansible all -a whoami -u USER_NAME
-ansible all -a whoami -u USER_NAME --become
 ansible all -m ping
 ansible all -m ping -u USER_NAME
 ansible all -m setup
+ansible all -m shell -a 'whoami' -u USER_NAME
+ansible all -m shell -a 'whoami' -u USER_NAME --become
 ansible all -m shell -a 'free -m'
 ansible all -m user -a "name=foo state=absent"                                                 # removal of user accounts that may exist 
 ansible all -m user -a "name=foo password=<crypted password here>"                             # creation and manipulation of existing user accounts
@@ -27,9 +27,11 @@ ansible GROUPNAME_HOSTS --list-hosts
 ansible GROUPNAME_HOSTS -a "echo Hello World" -u USER_NAME
 ansible GROUPNAME_HOSTS -m setup
 ansible GROUPNAME_HOSTS -m ping
+ansible GROUPNAME_HOSTS -m shell -a "whoami" -u USER_NAME
 ansible GROUPNAME_HOSTS -m shell -a 'echo $TERM'
 ansible GROUPNAME_HOSTS -m shell -a 'df -Th'
-ansible GROUPNAME_HOSTS -m shell -a 'ls -l > temp.txt'
+ansible GROUPNAME_HOSTS -m shell -a 'ls -l > FILE_NAME.txt'
+ansible GROUPNAME_HOSTS -m shell -a "ls -lrt  ~/.ssh/FILE_NAME"
 ansible GROUPNAME_HOSTS -m command -a 'hostname'
 ansible GROUPNAME_HOSTS -m command -a 'cat temp.txt'
 ansible GROUPNAME_HOSTS -m file -a "dest=/FOLDER_NAME/FOLDER_NAME/FILE_NAME mode=600"          # changing ownership and permissions on files
@@ -41,6 +43,7 @@ ansible GROUPNAME_HOSTS -m file -a "dest=/FOLDER_NAME/FOLDER_NAME/FOLDER_NAME mo
 ansible GROUPNAME_HOSTS -m file -a "dest=/FOLDER_NAME/FOLDER_NAME state=absent"                                                 # delete a directory, directory and all its contents will be deleted
 ansible GROUPNAME_HOSTS -m copy -a "src=FILE_NAME dest=/FOLDER_NAME/FOLDER_NAME/FILE_NAME"                                      # copying files to multiple target machines
 ansible GROUPNAME_HOSTS -m copy -a "src=/FOLDER_NAME/FILE_NAME dest=/FOLDER_NAME/FILE_NAME"
+ansible GROUPNAME_HOSTS -m copy -a "src=~/FOLDER_NAME/FILE_NAME dest=/FOLDER_NAME/FILE_NAME owner=apache group=apache mode=0644"
 ansible GROUPNAME_HOSTS -m user -a 'name=user1 password=user1' --become                        # create the user, become–privilege to the superuser to run the command
 ansible GROUPNAME_HOSTS -m user -a 'name=user1 state=absent' --become                          # delete the user (state=absent) 
 ansible GROUPNAME_HOSTS -m yum -a "name=acme state=present"                                    # package is installed, but don’t update it
@@ -65,6 +68,13 @@ ansible all -i FILE_NAME -m ping -u USER_NAME
 ansible all -i FILE_NAME --key-file ~/.ssh/PRIVATE_KEY_FILE_NAME -m ping -u USER_NAME
 ansible GROUPNAME_HOSTS -i FILE_NAME -m ping
 ansible GROUPNAME_HOSTS -i FILE_NAME -m shell -a "ls -lrt /FOLDER_NAME/FOLDER_NAME"
+ansible GROUPNAME_HOSTS -i FILE_NAME -m copy -a "src=~/FOLDER_NAME/FILE_NAME dest=/FOLDER_NAME/FILE_NAME owner=apache group=apache mode=0644" -b
+ansible GROUPNAME_HOSTS -i FILE_NAME -m copy -a "src=~/FOLDER_NAME/FOLDER_NAME dest=/FOLDER_NAME/FOLDER_NAME/ owner=apache group=apache mode=0644" -b
+ansible GROUPNAME_HOSTS -i FILE_NAME -m command -a 'uptime'
+ansible GROUPNAME_HOSTS -i FILE_NAME -m command -a "uname -a"
+ansible GROUPNAME_HOSTS -i FILE_NAME -m command -a "df -h"
+ansible GROUPNAME_HOSTS -i FILE_NAME -m command -a "ls FOLDER_NAME/" -b --limit HOSTNAME_OR_HOSTIPADDRESS
+ansible GROUPNAME_HOSTS -i FILE_NAME -m find -a "paths='/FOLDER_NAME/FOLDER_NAME' file_type=file patterns='*.FORMAT'"
 ● Dynamic Inventory
 ansible -i FILE_NAME us-east-1d -u USER_NAME -m ping
 ansible -i /FOLDER_NAME/FILE_NAME.yaml ec2 -m ping --private-key=/home/USER_NAME/FILE_NAME.pem
