@@ -17,4 +17,4 @@
       src: /opt/FILE
       dest: ~/.
   - name: add content to existing file
-    command: echo "Hello World." > ~/FILE
+    command: 'echo "Hello World." > ~/FILE'
