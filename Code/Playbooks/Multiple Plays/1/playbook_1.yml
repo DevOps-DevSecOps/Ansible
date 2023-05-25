@@ -16,7 +16,7 @@
     copy:
       src: /opt/FILE
       dest: ~/.
-  - name: add content to existing file
+  - name: list of all existing file in current path
     command: "ls -lrt /root"
     register: file 
   - name: debug the output
