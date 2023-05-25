@@ -4,7 +4,7 @@
   connection: local
   tasks:
     - name: creating a file
-      shell: "touch FILE"
+      shell: "sudo touch FILE"
       args:
         chdir: /opt
 
