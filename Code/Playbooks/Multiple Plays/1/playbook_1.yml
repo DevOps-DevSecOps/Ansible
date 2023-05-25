@@ -17,4 +17,8 @@
       src: /opt/FILE
       dest: ~/.
   - name: add content to existing file
-    command: sudo echo "Hello World." > /root/FILE
+    command: "ls -lrt /root"
+    register: file 
+  - name: debug the output
+    debug:
+      var: file.stdout
