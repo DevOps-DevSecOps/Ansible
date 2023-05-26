@@ -108,6 +108,8 @@ ansible-playbook FILE_NAME.yml --list-tags                                      
 ansible-playbook FILE_NAME.yml -t TAG_NAME
 ansible-playbook FILE_NAME.yml -t TAG_NAME,TAG_NAME
 ansible-playbook FILE_NAME.yml --tags TAG_NAME                                                          # execute the playbook with the specific tag will trigger that particular task
+ansible-playbook FILE_NAME.yml --tags TAG_NAME -u USER_NAME
+ansible-playbook FILE_NAME.yml --tags TAG_NAME -u USER_NAME -vvv
 ansible-playbook FILE_NAME.yml --tags TAG_NAME --limit HOSTNAME_OR_HOSTIPADDRESS
 ansible-playbook FILE_NAME.yml --tags "TAG_NAME,TAG_NAME"
 ansible-playbook FILE_NAME.yml --tags "TAG_NAME, TAG_NAME"
