@@ -1,0 +1,6 @@
+$ ansible-playbook playbook_5.yml
+
+$ ansible-playbook playbook_5.yml --tags=tag -u root
+$ ansible-playbook playbook_5.yml --tags=never -u root
+
+$ ansible-playbook playbook_5.yml --tags=tag,never -u root
