@@ -1,0 +1,6 @@
+$ ansible-playbook playbook_4.yaml
+
+$ ansible-playbook playbook_4.yaml --tags always
+
+$ ansible-playbook playbook_4.yaml --tags=tag2 -u root
+$ ansible-playbook playbook_4.yaml --tags=never -u root
