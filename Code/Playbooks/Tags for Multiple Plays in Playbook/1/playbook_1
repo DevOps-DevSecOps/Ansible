@@ -1,0 +1,6 @@
+$ ansible-playbook playbook_1.yaml -u root
+
+$ ansible-playbook playbook_1.yaml --tags tag1
+
+$ ansible-playbook playbook_1.yaml --tags tag2 -u root
+$ ansible-playbook playbook_1.yaml -u root --tags tag2 -vvv
