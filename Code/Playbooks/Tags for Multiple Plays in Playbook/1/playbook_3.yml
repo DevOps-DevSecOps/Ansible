@@ -1,0 +1,27 @@
+---
+- name: create a file in localhost
+  hosts: 127.0.0.1
+  connection: local
+  tags:
+  - "tag1"
+  tasks:
+    - name: creating a file
+      shell: "sudo touch FILE"
+      args:
+        chdir: /opt
+
+
+- name: copy and add content to file
+  hosts: all
+  tags: never
+  tasks:
+  - name: copy a file from local to remote
+    copy:
+      src: /opt/FILE
+      dest: ~/.
+  - name: list of all existing file in current path
+    command: "ls -lrt /root"
+    register: file 
+  - name: debug the output
+    debug:
+      var: file.stdout
