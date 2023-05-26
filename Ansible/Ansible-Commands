@@ -114,6 +114,10 @@ ansible-playbook FILE_NAME.yml --tags TAG_NAME --limit HOSTNAME_OR_HOSTIPADDRESS
 ansible-playbook FILE_NAME.yml --tags "TAG_NAME,TAG_NAME"
 ansible-playbook FILE_NAME.yml --tags "TAG_NAME, TAG_NAME"
 ansible-playbook FILE_NAME.yml --tags "TAG_NAME, TAG_NAME" --list-tasks
+ansible-playbook FILE_NAME.yml --tags=TAG_NAME
+ansible-playbook FILE_NAME.yml --tags=TAG_NAME -u USER_NAME
+ansible-playbook FILE_NAME.yml --tags=TAG_NAME,TAG_NAME
+ansible-playbook FILE_NAME.yml --tags=TAG_NAME,TAG_NAME -u USER_NAME
 ansible-playbook FILE_NAME.yml --skip-tags TAG_NAME
 ansible-playbook FILE_NAME.yml --skip-tags "TAG_NAME"
 ansible-playbook FILE_NAME.yml --skip-tags "TAG_NAME,TAG_NAME"
