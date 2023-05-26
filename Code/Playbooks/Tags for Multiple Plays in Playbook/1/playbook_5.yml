@@ -11,8 +11,7 @@
 
 - name: copy and add content to file
   hosts: all
-  tags: 
-    - ['never', 'tag']
+  tags: [ 'never', 'tag' ]
   tasks:
   - name: copy a file from local to remote
     copy:
