@@ -1,0 +1,5 @@
+$ ansible-playbook playbook_3.yml
+
+$ ansible-playbook playbook_3.yml --tags tag1
+
+$ ansible-playbook playbook_3.yml --tags never -u root
