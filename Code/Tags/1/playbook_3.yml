@@ -5,3 +5,4 @@
     template:
       src: template-in.j2
       dest: "/tmp/template-out.txt"
+    tags: always
