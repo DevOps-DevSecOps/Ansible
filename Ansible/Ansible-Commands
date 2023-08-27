@@ -133,6 +133,8 @@ ansible-playbook -i /FOLDER_NAME/FOLDER_NAME /FOLDER_NAME/FILE_NAME.yml --syntax
 ansible-playbook -i /FOLDER_NAME/FOLDER_NAME /FOLDER_NAME/FILE_NAME.yml --connection=local --sudo
 ansible-playbook -i FILE_NAME FILE_NAME.yml --extra-vars="NAME=VALUE"
 ansible-playbook -i FILE_NAME FILE_NAME.yml --extra-vars='{"NAME":"VALUE"}'                              # JSON extra variable
+ansible-playbook -i FILE_NAME --private-key=FILE_NAME FILE_NAME.yml
+ansible-playbook -i FILE_NAME --private-key=FILE_NAME.pem FILE_NAME.yml
 ansible-playbook -i FILE_NAME FILE_NAME.yml --tags=TAG_NAME
 ansible-playbook -i FILE_NAME FILE_NAME.yml --tags=TAG_NAME,TAG_NAME
 ansible-playbook -i FILE_NAME FILE_NAME.yml --skip-tags=TAG_NAME
