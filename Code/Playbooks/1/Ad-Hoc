@@ -1,0 +1,11 @@
+$ ansible 172.31.12.119 -m ping
+172.31.12.119 | SUCCESS => {
+   "changed": false,
+   "ping": "pong"
+}
+
+$ ansible 172.31.81.133 -m ping
+172.31.81.133 | SUCCESS => {
+   "changed": false,
+   "ping": "pong"
+}
