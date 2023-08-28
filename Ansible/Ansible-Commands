@@ -137,7 +137,10 @@ ansible-playbook -i FILE_NAME --private-key=FILE_NAME FILE_NAME.yml
 ansible-playbook -i FILE_NAME --private-key=FILE_NAME.pem FILE_NAME.yml
 ansible-playbook -i FILE_NAME FILE_NAME.yml --tags=TAG_NAME
 ansible-playbook -i FILE_NAME FILE_NAME.yml --tags=TAG_NAME,TAG_NAME
+ansible-playbook -i FILE_NAME --private-key=FILE_NAME.pem FILE_NAME.yml --tags=TAG_NAME
+ansible-playbook -i FILE_NAME --private-key=FILE_NAME.pem FILE_NAME.yml --tags=TAG_NAME,TAG_NAME
 ansible-playbook -i FILE_NAME FILE_NAME.yml --skip-tags=TAG_NAME
+ansible-playbook -i FILE_NAME --private-key=FILE_NAME.pem FILE_NAME.yml --skip-tags=TAG_NAME
 ansible-playbook -i FILE_NAME FILE_NAME.yml --key-file=FILE_NAME.pem
 
 [Vault]
