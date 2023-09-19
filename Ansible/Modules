@@ -204,6 +204,9 @@ It controls services on remote hosts.
 [set_fact]
 It allows setting new variables.
 
+[setup]
+Gathers facts about remote hosts.
+
 [shell]
 It execute shell commands on targets remote node.
 
