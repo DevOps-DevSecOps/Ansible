@@ -80,12 +80,66 @@ print statements during execution and can be useful for debugging variables.
 [dnf]
 It installs, upgrade, removes, and lists packages and groups with the dnf package manager.
 
+[docker_compose]
+It manage multi-container Docker applications.
+
+[docker_config]
+It create and remove Docker configs in a Swarm environment.
+
+[docker_container]
+
+[docker_container_info]
+It retrieves facts about docker container.
+
+[docker_host_info]
+It retrieves facts about docker host and lists of objects of the services.
+
+[docker_image]
+
 [docker_image_info]
 Inspect docker images with one or more image names.
 If an image does not exist locally, it will not appear in the results.
 
 [docker_login]
 Authenticate with a docker registry and add the credentials to your local Docker config file.
+
+[docker_network]
+It create/remove Docker networks and connect containers to them.
+
+[docker_network_info]
+It retrieves facts about docker network.
+
+[docker_node]
+It manages the Docker nodes via Swarm Manager.
+
+[docker_node_info]
+It retrieves facts about docker swarm node from Swarm Manager.
+
+[docker_prune]
+It allows to prune various docker objects.
+It allows to run "docker container prune, docker image prune, docker network prune, docker volume prune" via the Docker API.
+
+[docker_secret]
+It create and remove Docker secrets in a Swarm environment.
+
+[docker_stack]
+
+[docker_swarm]
+
+[docker_swarm_info]
+It retrieves facts about a Docker Swarm.
+
+[docker_swarm_service]
+It manages docker services via a swarm manager node.
+
+[docker_swarm_service_info]
+It retrieves information about docker services from a Swarm Manager.
+
+[docker_volume]
+It create/remove a Docker volumes.
+
+[docker_volume_info]
+It retrieve facts about Docker volumes.
 
 [easy_install]
 It installs Python libraries, optionally in a virtualenv.
@@ -115,6 +169,9 @@ It manage git checkouts of repositories to deploy files or software.
 
 [group]
 It manage presence of groups on a host Linux.
+
+[helm]
+It manages Kubernetes packages with the Helm package manager.
 
 [import_playbook]
 Includes a file with a list of plays to be executed.
