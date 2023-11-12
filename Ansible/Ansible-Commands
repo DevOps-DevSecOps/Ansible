@@ -84,6 +84,7 @@ ansible -i /FOLDER_NAME/FILE_NAME.yaml ec2 -m apt -a 'name=git state=present' --
 [Playbooks]
 ● Static Inventory
 ansible-playbook FILE_NAME.yml
+ansible-playbook /FOLDER_NAME/FOLDER_NAME/FILE_NAME.yml
 ansible-playbook FILE_NAME.yml -c local
 ansible-playbook FILE_NAME.yml -vvv
 ansible-playbook FILE_NAME.yml -u USER_NAME
