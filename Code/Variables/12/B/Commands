@@ -1,2 +1,2 @@
 [execute the playbook with the variables at runtime by passing them at the command line]
-$ ansible-playbook example-external-vars.yml --extra-vars "app_version=1.0.3"
+$ ansible-playbook playbook.yaml --extra-vars "app_version=1.0.3"
