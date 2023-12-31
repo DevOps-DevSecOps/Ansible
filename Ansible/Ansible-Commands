@@ -145,6 +145,7 @@ ansible-playbook -i FILE_NAME --private-key=FILE_NAME.pem FILE_NAME.yml --skip-t
 ansible-playbook -i FILE_NAME FILE_NAME.yml --key-file=FILE_NAME.pem
 
 [Vault]
+ansible-vault create FILE_NAME
 ansible-vault create FILE_NAME.yml                                                      # create new encrypted file
 ansible-vault encrypt FILE_NAME.yml                                                     # encrypt an already existing file which is unencrypted
 ansible-vault view FILE_NAME.yml
