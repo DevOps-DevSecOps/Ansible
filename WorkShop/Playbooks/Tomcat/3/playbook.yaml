@@ -1,0 +1,50 @@
+---
+- hosts: web1
+  tasks:
+    # tasks file for tomcat
+    - name: Install Java
+      yum:
+        name: java-1.8.0-openjdk
+        state: present
+        
+    - name: add group "tomcat"
+      group: name=tomcat
+      
+    - name: add user "tomcat"
+      user: name=tomcat group=tomcat home=/usr/share/tomcat createhome=no
+      become: True
+      become_method: sudo
+      
+    - name: Download Tomcat
+      get_url: url=https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz dest=/opt/apache-tomcat-9.0.68.tar.gz
+      
+    - name: Extract archive
+      command: chdir=/usr/share /bin/tar xvf /opt/apache-tomcat-9.0.68.tar.gz -C /opt/ creates=/opt/apache-tomcat-9.0.68
+      
+    - name: Symlink install directory
+      file: src=/opt/apache-tomcat-9.0.68 path=/usr/share/tomcat state=link
+      
+    - name: Change ownership of Tomcat installation
+      file: path=/usr/share/tomcat/ owner=tomcat group=tomcat state=directory recurse=yes
+      
+    - name: Install Python3
+      yum:
+        name: python3-pip
+        state: present
+        
+    - name: Install dependencies
+      pip:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - boto3
+        
+    - name: Get Artifact from S3 Bucket
+      amazon.aws.aws_s3:
+        bucket: devopsweb.ansible
+        object: target/devOpsWeb.war
+        dest: /usr/share/tomcat/webapps/devOpsWeb.war
+        mode: get
+        
+    - name: Start Tomcat
+      shell: /usr/share/tomcat/bin/startup.sh
