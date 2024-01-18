@@ -1,0 +1,6 @@
+[all:vars]
+ansible_connection = ssh
+ansible_python_interpreter=/usr/bin/python3
+
+[WebServer]
+web1 ansible_host=52.66.65.210 ansible_user=root
