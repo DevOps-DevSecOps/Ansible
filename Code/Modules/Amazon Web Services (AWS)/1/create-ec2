@@ -1,10 +1,12 @@
-[Inventory File - Add the below two lines in the end of the file]
+Inventory File - Add the below two lines in the end of the file
 $ sudo vi /etc/ansible/hosts
 [localhost]
 local
 
-[Now execute the ansible playbook by using a command]
+Then save and quite the file.
+
+Now execute the ansible playbook by using a command
 $ ansible-playbook create_ec2.yml
 
-[LINK]
+LINK
 https://www.coachdevops.com/2024/01/ansible-playbook-for-provisioning-new.html
