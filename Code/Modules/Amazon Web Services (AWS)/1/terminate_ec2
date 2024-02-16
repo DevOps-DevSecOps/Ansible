@@ -1,0 +1,12 @@
+Inventory File - Add the below two lines in the end of the file
+$ sudo vi /etc/ansible/hosts 
+[localhost]
+local
+
+Then save the file and come out of it.
+
+Now execute the ansible playbook by using a command
+$ ansible-playbook terminate_ec2.yaml -e ec2_id=i-xxxx
+
+LINK
+https://www.cidevops.com/2018/03/terminate-ec2-ansible-playbook-example.html
