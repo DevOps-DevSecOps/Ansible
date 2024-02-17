@@ -1,0 +1,15 @@
+Inventory File - Add the below two lines in the end of the file in Ansible management node.
+$ sudo vi /etc/ansible/hosts
+[My_Group]  
+IP_ADDRESS ansible_ssh_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa  ansible_python_interpreter=/usr/bin/python3
+
+Then save and quite the file.
+
+Now execute the ansible playbook by using a command.
+$ ansible-playbook Jenkins.yml
+
+Now enter public ip address or public dns name with port no 8080 of target server.
+http://target_node_public_dns_name:8080
+
+LINK
+https://www.cidevops.com/2018/05/install-jenkins-using-ansible-playbook.html
