@@ -1,0 +1,24 @@
+Create SSH keys in Ansible host machine.
+$ ssh-keygen
+
+Then copy the public key content from Ansible management node.
+$ sudo cat ~/.ssh/id_rsa.pub
+
+Now login to target node, execute the below command to open the file.
+$ sudo vi /home/ubuntu/.ssh/authorized_keys
+press i, then paste the key from copied 'cat ~/.ssh/id_rsa.pub'.
+
+Inventory File - Add the below two lines in the end of the file in Ansible management node.
+$ sudo vi /etc/ansible/hosts
+[My_Group]  
+IP_ADDRESS ansible_ssh_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa  ansible_python_interpreter=/usr/bin/python3
+
+Ansible Control node is able to connect to target node.
+$ ansible -m ping all
+$ ansible all -a "whoami"
+
+Now execute the ansible playbook by using a command.
+$ ansible-playbook Java11.yml
+
+Now after successfully executing, enter below command to make sure Java is installed in target node.
+$ java -version
